@@ -6,11 +6,24 @@ body {
     background-color: #FFFFFF;
 }
 
-h1 {
+.title {
     font-size:3em;
     text-align:center;
     color: black;
 }
+
+.mobileview {
+    margin: 16px 20px;
+    text-align: left;
+    font-size: large;
+    font-family: cursive;
+    font-style: italic;
+}
+
+.titlefilled{
+    display: none;
+}
+
 
 section {
     border: 5px solid black;
@@ -18,18 +31,19 @@ section {
     margin: 10px;
 }
 
+
+
 .heading {
-    float: right;
-    border-bottom: 1px solid black;
-    border-left: 1px solid black;
-    margin: 0;
-    width: 230px;
+    font-size: large;
     text-align: center;
-    font-style: Times;
+    padding: 2px 20px;
+    padding-top:2px;
+    margin: 0px;
+    border: 1px solid #000000;
+    font-style: normal;
     font-size: 24px;
     font-weight: bold;
     height: 45px;
-    padding-top: 10px;
 }
 
 
@@ -46,9 +60,16 @@ section.sushi>.heading {
     background-color: #FFFF00;
 }
 
-section>p {
+section> p {
     clear:both;
     padding:10px;
+    overflow: hidden;
+    height: 160px;
+}
+
+section> p:hover {
+    overflow-y: scroll;
+    cursor: row-resize;
 }
 
 
@@ -95,6 +116,12 @@ section>p {
     .col-lg-12 {
         width: 100%;
     }
+    .mobileview{
+        display: none;
+    }
+    .heading {
+        float: right;
+    }
 }
 
 
@@ -139,6 +166,12 @@ section>p {
     }
     .col-md-12 {
         width: 100%;
+    }
+    .mobileview{
+        display: none;
+    }
+    .heading {
+        float: right;
     }
 }
 
@@ -185,4 +218,14 @@ section>p {
     .col-sm-12 {
         width: 100%;
     }
+    .mobileview, .titlefilled {
+        display: inline;
+    }
+    .title {
+        display: none;
+    }
+     .heading {
+        font-size: 18px;
+    }
+
 }
