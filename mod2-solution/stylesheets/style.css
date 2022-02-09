@@ -53,11 +53,11 @@ section.chicken>.heading{
 
 section.beef>.heading {
     color: white;
-    background-color: #FF0000;
+    background-color: #B22222;
 }
 
 section.sushi>.heading {
-    background-color: #FFFF00;
+    background-color: #FFDEAD;
 }
 
 section> p {
