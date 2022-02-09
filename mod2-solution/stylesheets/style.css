@@ -1,36 +1,49 @@
 * {
     box-sizing: border-box;
-    font-family: Cambaria;
 }
 
 body {
     background-color: #FFFFFF;
 }
 
-h1 {
+.title {
     font-size:3em;
     text-align:center;
     color: black;
 }
 
+.mobileview {
+    margin: 16px 20px;
+    text-align: left;
+    font-size: large;
+    font-family: cursive;
+    font-style: italic;
+}
+
+.titlefilled{
+    display: none;
+}
+
+
 section {
-    border: 1px solid black;
+    border: 5px solid black;
     background-color: #808080;
     margin: 10px;
 }
 
+
+
 .heading {
-    float: right;
-    border-bottom: 1px solid black;
-    border-left: 1px solid black;
-    margin: 0;
-    width: 230px;
+    font-size: large;
     text-align: center;
-    font-style: Times;
+    padding: 2px 20px;
+    padding-top:2px;
+    margin: 0px;
+    border: 1px solid #000000;
+    font-style: normal;
     font-size: 24px;
     font-weight: bold;
     height: 45px;
-    padding-top: 10px;
 }
 
 
@@ -40,23 +53,28 @@ section.chicken>.heading{
 
 section.beef>.heading {
     color: white;
-    background-color: #FF0000;
+    background-color: #B22222;
 }
 
 section.sushi>.heading {
-    background-color: #FFFF00;
+    background-color: #FFDEAD;
 }
 
-section>p {
-    padding: 40px 15px 15px 15px;
+section> p {
+    clear:both;
+    padding:10px;
+    overflow: hidden;
+    height: 160px;
 }
 
-.row {
-    width: 100%;
+section> p:hover {
+    overflow-y: scroll;
+    cursor: row-resize;
 }
 
 
-/* Desktop view options */
+
+/* Desktop UI */
 
 @media (min-width: 992px) {
     .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
@@ -98,10 +116,16 @@ section>p {
     .col-lg-12 {
         width: 100%;
     }
+    .mobileview{
+        display: none;
+    }
+    .heading {
+        float: right;
+    }
 }
 
 
-/* Tablet view options */
+/* Tablet UI */
 
 @media (min-width: 768px) and (max-width: 991px) {
     .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
@@ -143,10 +167,16 @@ section>p {
     .col-md-12 {
         width: 100%;
     }
+    .mobileview{
+        display: none;
+    }
+    .heading {
+        float: right;
+    }
 }
 
 
-/* Mobile view options */
+/* Mobile UI */
 
 @media (max-width: 767px) {
     .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
@@ -188,4 +218,14 @@ section>p {
     .col-sm-12 {
         width: 100%;
     }
+    .mobileview, .titlefilled {
+        display: inline;
+    }
+    .title {
+        display: none;
+    }
+     .heading {
+        font-size: 18px;
+    }
+
 }
