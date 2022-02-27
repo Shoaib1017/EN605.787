@@ -192,32 +192,28 @@ function buildAndShowCategoriesHTML (categories) {
 
 // Builds HTML for the about page
   function buildAndShowAboutHTML() {
+    const counter = 5;
     // Load about snippet
     $ajaxUtils.sendGetRequest(
       aboutPageHtml,
       function (aboutPageHtml) {
         // Switch CSS class active to about button
         switchMenuToActive();
-        insertHtml("#main-content", buildStarRatingHtml(aboutPageHtml));
+        insertHtml("#main-content", buildStarRatingHtml(aboutPageHtml, counter));
       },
       false);
   }
 
-  function buildStarRatingHtml(htmlPage) {
+  function buildStarRatingHtml(htmlPage, counterArray) {
     var html = htmlPage;
-    var randomNum = getRandomNumber();
-    var AllStarClass = "fa fa-star";
-    var NoStarClass = "fa fa-star-o";
-    var className;
+    var randomNum = getRandomNumber(1, 5);
 
     // Insert Full or Empty Stars into the page based on Random counter
-    for (var i = 1; i <= 5; i++) {
-      className = "AllStar" + i;
-
+    for (var i = 1; i <= counterArray; i++) {
       if (randomNum >= i) {
-        html = insertProperty(html, className, AllStarClass);
+        html = insertProperty(html, "AllStar"+i, "fa fa-star");
       } else {
-        html = insertProperty(html, className, NoStarClass);
+        html = insertProperty(html, "AllStar"+i, "fa fa-star-o");
       }
     }
     html = insertProperty(html, "NumberofStars", randomNum);
@@ -380,8 +376,8 @@ function insertItemPortionName(html,
 }
 
 // Returns a random number from 1 to 5 
-  function getRandomNumber() {
-    return Math.floor(Math.random() * 5) + 1;
+  function getRandomNumber(min, max) {
+     return Math.floor(Math.random() * (max - min + 1) + min)
   }
 
 
