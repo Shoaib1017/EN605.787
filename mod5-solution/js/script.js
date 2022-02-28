@@ -192,24 +192,24 @@ function buildAndShowCategoriesHTML (categories) {
 
 // Builds HTML for the about page
   function buildAndShowAboutHTML() {
-    const counter = 5;
     // Load about snippet
     $ajaxUtils.sendGetRequest(
       aboutPageHtml,
       function (aboutPageHtml) {
         // Switch CSS class active to about button
         switchMenuToActive();
-        insertHtml("#main-content", buildStarRatingHtml(aboutPageHtml, counter));
+        insertHtml("#main-content", buildStarRatingHtml(aboutPageHtml));
       },
       false);
   }
 
-  function buildStarRatingHtml(htmlPage, counterArray) {
+  function buildStarRatingHtml(htmlPage) {
     var html = htmlPage;
+    var numofLines = html.split("\n")
     var randomNum = getRandomNumber(1, 5);
 
     // Insert Full or Empty Stars into the page based on Random counter
-    for (var i = 1; i <= counterArray; i++) {
+    for (var i = 1; i <= numofLines.length-1; i++) {
       if (randomNum >= i) {
         html = insertProperty(html, "AllStar"+i, "fa fa-star");
       } else {
