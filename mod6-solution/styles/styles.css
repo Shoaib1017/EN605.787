@@ -1,0 +1,14 @@
+.success {
+    border: 1px solid #006400;
+    color: #006400 ;
+}
+
+.error {
+    border: 1px solid #DC143C;
+    color: #DC143C;
+}
+
+.message { 
+	font-size: 1.3em; 
+	font-weight: bold; 
+}
