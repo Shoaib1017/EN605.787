@@ -7,3 +7,8 @@
     border: 1px solid #DC143C;
     color: #DC143C;
 }
+
+.message { 
+	font-size: 1.3em; 
+	font-weight: bold; 
+}
