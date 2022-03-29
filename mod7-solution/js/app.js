@@ -58,7 +58,6 @@
 
   function DollarFilter() {
     return function (input) {
-      input = input || 0.00;
       return "$$$" + input.toFixed(2);
     }
   }
