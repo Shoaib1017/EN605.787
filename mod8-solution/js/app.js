@@ -15,7 +15,7 @@
     self.found = [];
     self.nothingFound = false;
 
-    self.narrow = function (itemToSearch) {
+    self.narrowItDown = function (itemToSearch) {
       if (itemToSearch) {
        let promise = MenuSearchService.getMatchedMenuItems(itemToSearch.toLowerCase())
         promise.then(function (result) {
