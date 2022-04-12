@@ -56,7 +56,7 @@
     };
   }
 
-  // Implementation of Directive
+  // Implementation of Directives
   function FoundItemsDirective() {
     var directive = {
       templateUrl: 'foundItems.html',
