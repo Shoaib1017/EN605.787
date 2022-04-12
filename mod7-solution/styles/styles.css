@@ -1,0 +1,28 @@
+.emptyMessage {
+    font-weight: bold;
+    color: red;
+    font-size: 1.2em;
+}
+li {
+  margin-bottom: 7px;
+  font-size: 1.2em;
+}
+li > button {
+  margin-left: 6px;
+}
+button > span {
+  color: green;
+}
+ul {
+  padding: 0px;
+}
+.list-item {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+.item-quantity {
+    width: 60px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
