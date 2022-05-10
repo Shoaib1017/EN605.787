@@ -10,11 +10,11 @@ function UserService() {
   var service = this;
   var savedUser;
 
-  service.saveUser = function (user) {
+ service.saveUser = function (user) {
     savedUser = user;
   };
 
-  service.getUser = function () {
+ service.getUser = function () {
     return savedUser;
   }
 

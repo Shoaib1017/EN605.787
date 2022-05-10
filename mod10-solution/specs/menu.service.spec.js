@@ -26,6 +26,7 @@ describe('menu service', function () {
     $httpBackend.flush();
   });
 
+  
   it('should return a invalid response from the Menu Service', function () {
     $httpBackend.whenGET(`${ApiBasePath}/menu_items/${invalidShortname}.json`).respond(500, invalidResponse);
    menuService.getSingleItemName(invalidShortname)
