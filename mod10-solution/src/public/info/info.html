@@ -1,0 +1,20 @@
+<div class="container">
+	<div class="error" ng-show="!infoCtrl.User">
+    Not Signed Up Yet. <a ui-sref="public.signup">Sign Up Now!</a>
+  </div>
+  <div ng-show="infoCtrl.User">
+    <div>
+      <span>First Name: {{ infoCtrl.User.firstName }}</span>
+      <br>
+      <span>Last Name: {{ infoCtrl.User.lastName }}</span>
+      <br>
+      <span>Email: {{ infoCtrl.User.email }}</span>
+      <br>
+      <span>Phone Number: {{ infoCtrl.User.phone}}</span>
+      <br>
+      <img class="img-responsive" width="250" height="150" ng-src="{{infoCtrl.basePath}}/images/{{infoCtrl.menuItem.short_name}}.jpg" alt="{{infoCtrl.menuItem.name}}">
+      <p>{{infoCtrl.menuItem.name}}</p>
+      <p>{{infoCtrl.menuItem.description}}</p>
+    </div>
+  </div>
+</div>
