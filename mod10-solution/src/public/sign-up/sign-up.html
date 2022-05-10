@@ -1,0 +1,36 @@
+<div class="container">
+  <form name=signUpForm>
+    <input type="text" style="color: black;" placeholder="Enter First Name"
+    ng-model="signUpCtrl.firstName" required><br>
+
+    <input type="text" style="color: black;" placeholder="Enter Last Name"
+    ng-model="signUpCtrl.lastName" required><br>
+
+    <input type="text" style="color: black;" placeholder="Enter Email Address"
+    pattern="[0-9a-zA-Z]*@[0-9a-zA-Z]*.com"
+    name="email" ng-model="signUpCtrl.email" required>
+    <span ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">
+      Must be a valid email address: handle@domain format
+    </span><br>
+
+    <input type="text" style="color: black;" placeholder="Phone ###-###-####"
+    name="phone" pattern="(\d{3})-(\d{3})-(\d{4})"
+    ng-model="signUpCtrl.phoneNumber" required>
+    <span ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">
+      Must be in the format of ###-###-####
+    </span><br>
+
+    <input type="text" style="color: black;" placeholder="Favorite Item"
+    ng-blur="signUpCtrl.fetchMenuItemShortName();"
+    name="favItem" ng-model="signUpCtrl.favoriteItem" required>
+    <span ng-if="signUpCtrl.invalidShortName">
+      No such menu exists
+    </span><br>
+
+    <button ng-disabled="signUpForm.$invalid" ng-click="signUpCtrl.submit();"
+    style="color: black;">
+      Submit
+    </button>
+  </form>
+  <span ng-if="signUpCtrl.completed">Your information has been saved</span>
+</div>
